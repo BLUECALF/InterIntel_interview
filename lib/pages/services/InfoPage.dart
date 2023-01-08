@@ -13,6 +13,7 @@ import 'package:interintel_interview/widgets/make_list_tile.dart';
 class InfoPage extends GetView {
   final _formKey = GlobalKey<FormBuilderState>();
   final AppController appController = Get.find<AppController>();
+  PageController _pageController = Get.find<PageController>();
   final CommonPageController commonPageController =
       Get.find<CommonPageController>();
   var errorText = "".obs;
@@ -198,6 +199,7 @@ class InfoPage extends GetView {
         appController.update_details_in_state(data);
         /// make common page take user to the design tab
         commonPageController.selected_index.value = 1;
+        _pageController.animateToPage(1, duration: Duration(milliseconds: 500), curve: Curves.easeInExpo);
       } else {
         if(data["saveMe"])
           appController.register(data);
@@ -214,6 +216,7 @@ class InfoPage extends GetView {
 
         /// make common page take user to the design tab
         commonPageController.selected_index.value = 1;
+        _pageController.animateToPage(1, duration: Duration(milliseconds: 500), curve: Curves.easeInExpo);
       }
     }
   }
