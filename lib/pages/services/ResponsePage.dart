@@ -15,7 +15,7 @@ class ResponsePage extends GetView {
     return Column(
       children: [
         SizedBox(
-          height: 40.h,
+          height: 90.h,
         ),
         Text("Reponse",
             style: TextStyle(

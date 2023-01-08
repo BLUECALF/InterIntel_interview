@@ -27,7 +27,9 @@ class DictionaryPage extends GetView {
     };
     return Column(
       children: [
-        SizedBox(height: 40.h,),
+        SizedBox(
+          height: 90.h,
+        ),
         Text("Dictionary",
             style: TextStyle(
                 fontSize: 26.sp,
