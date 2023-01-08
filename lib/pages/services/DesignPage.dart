@@ -3,16 +3,17 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:gradient_ui_widgets/gradient_ui_widgets.dart';
 import 'package:interintel_interview/controllers/AppController.dart';
+import 'package:interintel_interview/controllers/CommonPageController.dart';
 import 'package:interintel_interview/styles/colors.dart';
 import 'package:interintel_interview/utils/HelpfulFunctions.dart';
 import 'package:interintel_interview/widgets/make_animated_icon.dart';
-import 'package:lottie/lottie.dart';
 
 class DesignPage extends GetView {
   AppController appController = Get.find<AppController>();
 
   @override
   Widget build(BuildContext context) {
+    displayApproperiatePage();
     return SafeArea(
       child: Column(
         children: [
@@ -77,5 +78,16 @@ class DesignPage extends GetView {
         ],
       ),
     );
+  }
+
+  void displayApproperiatePage() {
+    if(appController.name.value == "")
+      {
+        // we have no name ... no user  -> force signup
+        CommonPageController commonPageController = Get.find<CommonPageController>();
+        PageController _pageController = Get.find<PageController>();
+        commonPageController.selected_index.value = 0;
+        _pageController.animateToPage(0, duration: Duration(milliseconds: 500), curve: Curves.easeInExpo);
+      }
   }
 }
