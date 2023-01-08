@@ -50,7 +50,7 @@ class InfoPage extends GetView {
                               shape: BoxShape.circle, color: color_blue_light),
                           child: Obx(
                                 () => Text(
-                              "${getNameInitials(appController.nickName.value.capitalize)}",
+                              "${getNameInitials(appController.name.value.capitalize)}",
                               style: TextStyle(
                                   color: color_white,
                                   fontSize: 17.sp,
@@ -72,7 +72,7 @@ class InfoPage extends GetView {
                             height: 20.h,
                           ),
                           FormBuilderTextField(
-                            initialValue: appController.getNickName(),
+                            initialValue: appController.getName(),
                             name: 'name',
                             textCapitalization: TextCapitalization.characters,
                             decoration: makeInputDecoration(
@@ -120,7 +120,7 @@ class InfoPage extends GetView {
                             height: 20.h,
                           ),
                           FormBuilderTextField(
-                            initialValue: appController.getNickName(),
+                            initialValue: appController.getEmail(),
                             name: 'email',
                             textCapitalization: TextCapitalization.characters,
                             decoration: makeInputDecoration(
