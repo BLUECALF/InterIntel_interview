@@ -6,7 +6,6 @@ import 'package:interintel_interview/controllers/AppController.dart';
 import '../../styles/colors.dart';
 import '../../utils/HelpfulFunctions.dart';
 import '../CommonPage.dart';
-import '../local_auth/PassCodePage.dart';
 
 class LoadingPage extends StatelessWidget {
   AppController appController = Get.put(AppController());

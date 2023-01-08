@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:interintel_interview/controllers/AppController.dart';
 import 'package:interintel_interview/controllers/CommonPageController.dart';
+import 'package:interintel_interview/pages/services/DesignPage.dart';
+import 'package:interintel_interview/pages/services/DictionaryPage.dart';
+import 'package:interintel_interview/pages/services/InfoPage.dart';
+import 'package:interintel_interview/pages/services/ResponsePage.dart';
 import 'package:interintel_interview/widgets/tab_bar_material_widget.dart';
 
 import '../utils/HelpfulFunctions.dart';
-import 'services/SendPage.dart';
 
 class CommonPage extends GetView {
   /// puting main constant controllers
@@ -35,9 +38,10 @@ class CommonPage extends GetView {
                   commonPageController.selected_index.value = newIndex;
                 },
                 children: [
-                  DashboardPage(),
-                  SendPage(),
-                  AccountPage(),
+                  InfoPage(),
+                  DesignPage(),
+                  ResponsePage(),
+                  DictionaryPage(),
                 ],
               ),
               bottomNavigationBar: TabBarMaterialWidget(),
@@ -47,17 +51,6 @@ class CommonPage extends GetView {
     );
   }
 
-  bool changeUpdateClicked() {
-    update_clicked.value = !update_clicked.value;
-    print(
-        "The Value of installed version is ::${Get.find<Upgrader>().currentInstalledVersion()}");
-    Get.defaultDialog(
-        title: "Update App and Restart",
-        content: Text("Restart to continue"),
-        onConfirm: (){},
-        barrierDismissible: false);
-    return true;
-  }
   void checkNetwork(context) async
   {
     if(await hasInternet() == false)
@@ -74,7 +67,12 @@ class CommonPage extends GetView {
                     borderRadius: BorderRadius.all(Radius.circular(32.0))),
                 contentPadding: EdgeInsets.all(10.0),
                 title: Text('You have no Internet'),
-                content: Text('Connect to an internet connection via data or WIFI,Then restart the PrivPay app to continue !'),
+                content: Text('Connect to an internet connection via data or WIFI,Then restart the InterIntel app to continue !'),
+                actions: [
+                  ElevatedButton(onPressed: (){
+
+                  }, child: Text("ok"))
+                ],
               ),
             );
           },
