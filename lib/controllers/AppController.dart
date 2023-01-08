@@ -15,8 +15,12 @@ class AppController extends GetxController
     var Box =  GetStorage();
     if(Box.read("user") == null)
       name.value = "";
-    else
+    else {
       name.value = Box.read("user")["name"];
+      phone.value = Box.read("user")["phone"];
+      email.value = Box.read("user")["email"];
+      saveMe.value = Box.read("user")["saveMe"];
+    }
 
   }
 

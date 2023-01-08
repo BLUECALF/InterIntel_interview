@@ -5,13 +5,14 @@ import 'package:lottie/lottie.dart';
 class PrivPayAnimatedIcon extends StatefulWidget {
   String jsonPath = "";
   double size;
+  bool repeat;
 
   ///constructor
-  PrivPayAnimatedIcon({required this.jsonPath, required this.size}) {}
+  PrivPayAnimatedIcon({required this.jsonPath, required this.size,required this.repeat}) {}
 
   @override
   State<PrivPayAnimatedIcon> createState() =>
-      _PrivPayAnimatedIconState(jsonPath: jsonPath,size: size);
+      _PrivPayAnimatedIconState(jsonPath: jsonPath,size: size,repeat: repeat);
 }
 
 class _PrivPayAnimatedIconState extends State<PrivPayAnimatedIcon>
@@ -20,8 +21,9 @@ class _PrivPayAnimatedIconState extends State<PrivPayAnimatedIcon>
 
   String jsonPath = "";
   double size;
+  bool repeat;
 
-  _PrivPayAnimatedIconState({required this.jsonPath,required this.size}) {}
+  _PrivPayAnimatedIconState({required this.jsonPath,required this.size,required this.repeat}) {}
 
   @override
   void initState() {
@@ -45,7 +47,7 @@ class _PrivPayAnimatedIconState extends State<PrivPayAnimatedIcon>
         width: size.w,
         height: size.h,
         fit: BoxFit.contain,
-        repeat: false,
+        repeat: repeat,
         controller: animationController,
         onLoaded: (composition) {
       animationController.forward();
