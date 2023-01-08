@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:carrier_info/carrier_info.dart';
-import 'package:interintel_interview/pages/splash/FirstSplashPage.dart';
+import 'package:interintel_interview/pages/CommonPage.dart';
 import 'package:interintel_interview/styles/colors.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -161,12 +161,12 @@ Future<void> acceptTermsDialog(BuildContext context) async {
                 onPressed: () {
                   Get.back();
                   Get.back();
-                  Get.off(() => FirstSplashPage());
+                  Get.off(() => CommonPage());
                 },
                 child: Text("I agree")),
             OutlinedButton(onPressed: () {
               final snackBar = SnackBar(
-                content: const Text('In order to use PrivPay, You must accept the terms & conditions'),
+                content: const Text('In order to use InterIntel You must accept the terms & conditions'),
                 action: SnackBarAction(
                   label: 'OK',
                   onPressed: () {

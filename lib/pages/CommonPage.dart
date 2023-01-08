@@ -36,7 +36,6 @@ class CommonPage extends GetView {
                 },
                 children: [
                   DashboardPage(),
-                  //ContactsPage(),
                   SendPage(),
                   AccountPage(),
                 ],
