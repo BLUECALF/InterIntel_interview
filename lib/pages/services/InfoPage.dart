@@ -135,6 +135,7 @@ class InfoPage extends GetView {
                             ]),
                             keyboardType: TextInputType.text,
                           ),
+                          SizedBox(height: 20.h,),
                           Center(
                             child: Container(
                               height: 60.h,

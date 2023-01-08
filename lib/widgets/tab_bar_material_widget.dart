@@ -28,10 +28,10 @@ class TabBarMaterialWidget extends GetView {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   BuildTabItem(0, Icons.info,"info"),
-                  BuildTabItem(0, Icons.card_membership,"design"),
+                  BuildTabItem(1, Icons.card_membership,"design"),
                   //BuildTabItemPNG(1, "assets/images/send_money.png","Send"),
                   BuildTabItem(2,Icons.api,"response"),
-                  BuildTabItem(2,Icons.book,"dictionary"),
+                  BuildTabItem(3,Icons.book,"dictionary"),
                 ],
               ),
             ],

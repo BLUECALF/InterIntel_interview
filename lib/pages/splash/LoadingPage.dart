@@ -19,7 +19,7 @@ class LoadingPage extends StatelessWidget {
           SizedBox(
             width: 320.w,
               height: 110.h,
-              child: Image.asset("assets/images/PrivPay logo-01 1.png")),
+              child: Image.asset("assets/images/interintel_logo.JPG")),
           SizedBox(height: 300.h,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
