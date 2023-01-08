@@ -192,14 +192,17 @@ class InfoPage extends GetView {
 
       // if is first time go to common else get.back
       if (appController.isFirstTime()) {
+        if(data["saveMe"])
         appController.register(data);
 
+        appController.update_details_in_state(data);
         /// make common page take user to the design tab
         commonPageController.selected_index.value = 1;
       } else {
-        // register the user
-        appController.register(data);
-        // Go back after Edit
+        if(data["saveMe"])
+          appController.register(data);
+
+        appController.update_details_in_state(data);
         Get.back();
         Get.defaultDialog(
             title: "Success",

@@ -33,11 +33,15 @@ class AppController extends GetxController
     var Box =  GetStorage();
     // save users details
     Box.write("user", userDetails);
+  }
+  void update_details_in_state(Map userDetails)
+  {
     name.value = userDetails["name"];
     phone.value = userDetails["phone"];
     email.value = userDetails["email"];
     saveMe.value = userDetails["saveMe"];
   }
+
 
   String getPhone()
   {
