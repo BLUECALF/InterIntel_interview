@@ -2,6 +2,7 @@
 // list tiles of options in the profiles are made here
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
@@ -66,5 +67,21 @@ Widget make_pink_list_tile({required Widget child,required IconData icon_data})
           color: color_pink
       ),
       child: Icon(icon_data,color: Colors.white,size: 25.sp,)),
+  );
+}
+
+Widget make_todo_tile(String title,bool completed)
+{
+  return Container(
+    child: ListTile(
+      dense: true,
+      contentPadding: EdgeInsets.only(left: 20.w,top: -20.h),
+      title: Text(title,
+          style:TextStyle(
+              fontSize: 20.sp, fontWeight: FontWeight.w400
+          )
+      ),
+      leading: Icon(completed?Icons.check_box_outlined: Icons.check_box_outline_blank,size: 30.sp,),
+    ),
   );
 }
