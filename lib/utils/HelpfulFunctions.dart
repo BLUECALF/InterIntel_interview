@@ -131,7 +131,7 @@ Future<void> acceptTermsDialog(BuildContext context) async {
     content: Column(
       children: [
         Text(
-          "By using our services you agree to the Privpay  Terms and Conditions.",
+          "By using our services you agree to the InterIntel Terms and Conditions.",
           style: TextStyle(
               fontWeight: FontWeight.w400,
               fontSize: 15.sp,
@@ -143,7 +143,7 @@ Future<void> acceptTermsDialog(BuildContext context) async {
         ),
         TextButton(
           onPressed: () {
-            LaunchURL(link: "https://priv-pay.com/terms.html");
+            LaunchURL(link: "https://www.interintel.co.ke/");
           },
           child: Text(
             "Read Terms and Conditions",
