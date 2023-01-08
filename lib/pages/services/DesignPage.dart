@@ -40,8 +40,8 @@ class DesignPage extends GetView {
                           padding: EdgeInsets.all(35.215.sp),
                           decoration: new BoxDecoration(
                               shape: BoxShape.circle, color: color_blue_dark),
-                          child: Obx(
-                            () => Text(
+                          child:
+                             Text(
                               "${getNameInitials(appController.name.value.capitalize)}",
                               style: TextStyle(
                                   color: color_white,
@@ -49,7 +49,7 @@ class DesignPage extends GetView {
                                   fontWeight: FontWeight.w600,
                                   letterSpacing: (5 / 100 * 17).w),
                             ),
-                          )),
+                          ),
                     ),
                     Text("Name  : ${appController.name.value}"),
                     Text("Phone : ${appController.phone.value}"),
